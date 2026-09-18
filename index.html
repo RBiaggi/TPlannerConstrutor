@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <img src="assets/icons/logo.png" alt="Logo">
+        <button id="button_file" onclick="showFileOptions()">Arquivo</button>
+        <button id="button_minimize" onclick="minimizeWindow()">-</button>
+        <button id="button_restore" onclick="restoreWindow()">▭</button>
+        <button id="button_close" onclick="closeWindow()">x</button>
+    </nav>
+    <section>
+        <div class="tools">
+            <button id="button_undo"></button>
+            <button id="button_redo"></button>
+            <button id="button_pencil"></button>
+            <button id="button_eraser"></button>
+            <button id="button_square"></button>
+            <button id="button_bucket"></button>
+            <button id="button_dropper"></button>
+            <button id="button_drop"></button>
+        </div>
+        <button>Escolher Fundo</button>
+        <button>Escolher bloco</button>
+        <div class="grid-blocks">
+            <button>Recentes</button>
+            <button>Favoritos</button>
+            <div class="squares">
+                <button id="block_01"></button>
+                <button id="block_02"></button>
+                <button id="block_03"></button>
+                <button id="block_04"></button>
+                <button id="block_05"></button>
+                <button id="block_06"></button>
+                <button id="block_07"></button>
+                <button id="block_08"></button>
+                <button id="block_09"></button>
+                <button id="block_10"></button>
+                <button id="block_11"></button>
+                <button id="block_12"></button>
+                <button id="block_13"></button>
+                <button id="block_14"></button>
+                <button id="block_15"></button>
+                <button id="block_16"></button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="layers">
+            <button id="button_layer_walls"></button>
+            <button id="button_layer_main"></button>
+            <button id="button_layer_wires"></button>
+        </div>
+        <canvas>
+            ?
+        </canvas>
+    </section>
+    <section>
+        <div id="size">
+            Tamanho ?x?
+            <button id="button_edit_size"></button>
+        </div>
+        <div id="select_layers">
+            <button>Camadas</button>
+            <input id="input_layer_walls" type="checkbox">
+            <label for="input_layer_walls">Paredes</label>        
+            <input id="input_layer_main" type="checkbox">
+            <label for="input_layer_main">Blocos</label>        
+            <input id="input_layer_wires" type="checkbox">
+            <label for="input_layer_wires">Fios</label>
+        </div>
+        <div id="materials_list">
+            <button id="button_materials_list">Lista de Materiais</button>
+            <div id="materiais">
+                Materiais: <br>
+            </div>
+        </div>
+        <button id="button_place_creature">Posicionar Criatura</button>
+    </section>
+    <footer>
+        Y ? | X ?
+        <input type="text" placeholder="100%">
+        <button id="button_zoom_+">+</button>
+        <button id="button_zoom_-">-</button>
+    </footer>
+</body>
+</html>
