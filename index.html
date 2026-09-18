@@ -9,84 +9,90 @@
 <body>
     <nav>
         <img src="assets/icons/logo.png" alt="Logo">
-        <button id="button_file" onclick="showFileOptions()">Arquivo</button>
-        <button id="button_minimize" onclick="minimizeWindow()">-</button>
-        <button id="button_restore" onclick="restoreWindow()">▭</button>
-        <button id="button_close" onclick="closeWindow()">x</button>
+        <button id="button_file">Arquivo</button>
+        <button id="button_minimize">-</button>
+        <button id="button_restore">▭</button>
+        <button id="button_close">x</button>
     </nav>
-    <section>
-        <div class="tools">
-            <button id="button_undo"></button>
-            <button id="button_redo"></button>
-            <button id="button_pencil"></button>
-            <button id="button_eraser"></button>
-            <button id="button_square"></button>
-            <button id="button_bucket"></button>
-            <button id="button_dropper"></button>
-            <button id="button_drop"></button>
-        </div>
-        <button>Escolher Fundo</button>
-        <button>Escolher bloco</button>
-        <div class="grid-blocks">
-            <button>Recentes</button>
-            <button>Favoritos</button>
-            <div class="squares">
-                <button id="block_01"></button>
-                <button id="block_02"></button>
-                <button id="block_03"></button>
-                <button id="block_04"></button>
-                <button id="block_05"></button>
-                <button id="block_06"></button>
-                <button id="block_07"></button>
-                <button id="block_08"></button>
-                <button id="block_09"></button>
-                <button id="block_10"></button>
-                <button id="block_11"></button>
-                <button id="block_12"></button>
-                <button id="block_13"></button>
-                <button id="block_14"></button>
-                <button id="block_15"></button>
-                <button id="block_16"></button>
+    <div id="div_nome_projeto">
+        <span id="project_name">NomeDoProjeto</span>
+    </div>
+    <main>
+        <section id="sidebar_left">
+            <div class="tools">
+                <button id="button_undo"></button>
+                <button id="button_redo"></button>
+                <button id="button_pencil"></button>
+                <button id="button_eraser"></button>
+                <button id="button_square"></button>
+                <button id="button_bucket"></button>
+                <button id="button_dropper"></button>
+                <button id="button_drop"></button>
             </div>
-        </div>
-    </section>
-    <section>
-        <div id="layers">
-            <button id="button_layer_walls"></button>
-            <button id="button_layer_main"></button>
-            <button id="button_layer_wires"></button>
-        </div>
-        <canvas>
-            ?
-        </canvas>
-    </section>
-    <section>
-        <div id="size">
-            Tamanho ?x?
-            <button id="button_edit_size"></button>
-        </div>
-        <div id="select_layers">
-            <button>Camadas</button>
-            <input id="input_layer_walls" type="checkbox">
-            <label for="input_layer_walls">Paredes</label>        
-            <input id="input_layer_main" type="checkbox">
-            <label for="input_layer_main">Blocos</label>        
-            <input id="input_layer_wires" type="checkbox">
-            <label for="input_layer_wires">Fios</label>
-        </div>
-        <div id="materials_list">
-            <button id="button_materials_list">Lista de Materiais</button>
-            <div id="materiais">
-                Materiais: <br>
+            <button id="chose_background">Escolher Fundo</button>
+            <button id="chose_block">Escolher bloco</button>
+            <div class="grid-blocks">
+                <div id="switch">
+                    <button id="button_recent">Recentes</button>
+                    <button id="button_favorite">Favoritos</button>
+                </div>
+                <div class="squares">
+                    <button id="block_01"></button>
+                    <button id="block_02"></button>
+                    <button id="block_03"></button>
+                    <button id="block_04"></button>
+                    <button id="block_05"></button>
+                    <button id="block_06"></button>
+                    <button id="block_07"></button>
+                    <button id="block_08"></button>
+                    <button id="block_09"></button>
+                    <button id="block_10"></button>
+                    <button id="block_11"></button>
+                    <button id="block_12"></button>
+                    <button id="block_13"></button>
+                    <button id="block_14"></button>
+                    <button id="block_15"></button>
+                    <button id="block_16"></button>
+                </div>
             </div>
-        </div>
-        <button id="button_place_creature">Posicionar Criatura</button>
-    </section>
+        </section>
+        <section id="workspace">
+            <div id="layers">
+                <button id="button_layer_walls"></button>
+                <button id="button_layer_main"></button>
+                <button id="button_layer_wires"></button>
+            </div>
+            <canvas id="project_canvas">
+            </canvas>
+        </section>
+        <section id="sidebar_right">
+            <div id="size">
+                <span id="project_size">Tamanho ?x?</span>
+                <button id="button_edit_size"></button>
+            </div>
+            <div id="select_layers">
+                <button>Camadas</button>
+                <!-- <input id="input_layer_walls" type="checkbox">
+                <label for="input_layer_walls">Paredes</label>        
+                <input id="input_layer_main" type="checkbox">
+                <label for="input_layer_main">Blocos</label>        
+                <input id="input_layer_wires" type="checkbox">
+                <label for="input_layer_wires">Fios</label> -->
+            </div>
+            <div id="materials_list">
+                <button id="button_materials_list">Lista de Materiais</button>
+                <div id="materials">
+                    Materiais: <br>
+                </div>
+            </div>
+            <button id="button_place_creature">Posicionar Criatura</button>
+        </section>
+    </main>
     <footer>
-        Y ? | X ?
-        <input type="text" placeholder="100%">
-        <button id="button_zoom_+">+</button>
-        <button id="button_zoom_-">-</button>
+        X <span id="cursor_x"></span> | Y <span id="cursor_y"></span>
+        <input id="zoom_value" type="text" placeholder="100%">
+        <button id="button_zoom_in">+</button>
+        <button id="button_zoom_out">-</button>
     </footer>
 </body>
 </html>
